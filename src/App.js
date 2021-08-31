@@ -9,6 +9,11 @@ import "./App.css";
 function App() {
   const state = {
     yellowArea: {
+      arrows: {
+        arrowsX: { name: arrowsX, direction: "X" },
+        arrowsY: { name: arrowsY, direction: "Y" },
+        arrowsZ: { name: arrowsZ, direction: "Z" },
+      },
       input: [
         { key: 1, value: 3 },
         { key: 2, value: 6 },
@@ -65,8 +70,8 @@ function App() {
         row: [
           { key: 4, styleSheet: "redo", value: "REDO" },
           { key: 5, styleSheet: "green", value: "X" },
-          { key: 4, styleSheet: "purple", value: 6 },
-          { key: 5, styleSheet: "plus-one", value: "+1" },
+          { key: 6, styleSheet: "purple", value: 6 },
+          { key: 7, styleSheet: "plus-one", value: "+1" },
         ],
       },
       points: [

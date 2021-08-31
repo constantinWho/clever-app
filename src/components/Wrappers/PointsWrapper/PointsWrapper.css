@@ -1,1 +1,1 @@
-.points-wrapper{display:-ms-grid;display:grid;color:black;grid-area:points-row;-webkit-filter:drop-shadow(-1px -1px 0 rgba(255,255,255,0.5)) drop-shadow(1px -1px 0 rgba(255,255,255,0.5)) drop-shadow(1px 1px 0 rgba(255,255,255,0.5)) drop-shadow(-1px 1px 0 rgba(255,255,255,0.5));filter:drop-shadow(-1px -1px 0 rgba(255,255,255,0.5)) drop-shadow(1px -1px 0 rgba(255,255,255,0.5)) drop-shadow(1px 1px 0 rgba(255,255,255,0.5)) drop-shadow(-1px 1px 0 rgba(255,255,255,0.5))}
+.points-wrapper{display:-ms-grid;display:grid;color:black;grid-area:points-row}
