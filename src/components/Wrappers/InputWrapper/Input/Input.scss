@@ -1,0 +1,30 @@
+.input {
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+  width: 7vw;
+  height: 7vw;
+  color: #2c3e50;
+  font-family: "comic sans ms";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  margin: 1vw;
+  border-radius: 5px;
+  background: #ecf0f1;
+  border: 0.1px solid #2c3e50;
+  position: relative;
+  z-index: 5;
+
+}
+
+.highlight {
+  color: #2c3e50;
+  background: #7f8c8d;
+}
+
+.dices {
+  width: 9vw;
+  height: 9vw;
+}

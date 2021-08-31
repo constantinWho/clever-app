@@ -1,0 +1,10 @@
+.points-wrapper {
+  $opacity: .5;
+  display: grid;
+  color: black;
+  grid-area: points-row;
+  filter: drop-shadow(-1px -1px 0 rgba(255, 255, 255, $opacity))
+  drop-shadow(1px -1px 0 rgba(255, 255, 255, $opacity))
+  drop-shadow(1px 1px 0 rgba(255, 255, 255, $opacity))
+  drop-shadow(-1px 1px 0 rgba(255, 255, 255, $opacity));
+}

@@ -1,0 +1,35 @@
+.blue-area {
+  grid-area: blue-area;
+  background-color: #3498DB;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 36vw 9vw;
+  grid-template-rows:  9vw 27vw 9vw;
+  grid-template-areas:
+    "points-row points-row"
+    "input-grid bonus-row"
+    "bonus-col bonus-col";
+    
+    .input-wrapper {
+      grid-template-columns: 9vw 9vw 9vw 9vw;
+      grid-template-rows: 9vw 9vw 9vw;
+
+    }
+  
+    .bonus-wrapper-col {
+      grid-template-columns: 9vw 9vw 9vw 9vw 9vw;
+      grid-template-rows: 9vw ;
+    }
+    .bonus-wrapper-row {
+      grid-template-columns: 9vw;
+      grid-template-rows: 9vw 9vw 9vw 9vw;
+    }
+    .points-wrapper {
+      grid-template-rows: 9vw;
+      grid-template-columns: 4.3vw 4.3vw 4.3vw 4.3vw 4.3vw 4.3vw 4.3vw 4.3vw 4.3vw 4.3vw 4.3vw;
+  }
+}
+  
+

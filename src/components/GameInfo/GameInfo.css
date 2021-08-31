@@ -1,0 +1,4 @@
+.game-info {
+  grid-area: game-info;
+  background-color: rgb(74, 107, 164);
+}
