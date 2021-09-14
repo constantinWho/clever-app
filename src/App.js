@@ -1,12 +1,8 @@
-import GameInfo from "./components/GameInfo/GameInfo";
-import YellowArea from "./components/YellowArea/YellowArea";
-import BlueArea from "./components/BlueArea/BlueArea";
-import GreenArea from "./components/GreenArea/GreenArea";
-import OrangeArea from "./components/OrangeArea/OrangeArea";
-import PurpleArea from "./components/PurpleArea/PurpleArea";
-import "./App.css";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
+<<<<<<< HEAD
   const state = {
     yellowArea: {
       arrows: {
@@ -90,14 +86,24 @@ function App() {
     },
   };
 
+=======
+>>>>>>> parent of 525bf6f (yellow done, blue 80%)
   return (
-    <div className="app">
-      <GameInfo />
-      <YellowArea yellowArea={state.yellowArea} />
-      <BlueArea blueArea={state.blueArea} />
-      <GreenArea />
-      <OrangeArea />
-      <PurpleArea />
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
