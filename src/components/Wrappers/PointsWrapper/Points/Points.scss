@@ -1,0 +1,16 @@
+.star:before {
+  transform: rotate(60deg);
+}
+.star:after {
+  transform: rotate(30deg);
+}
+.points {
+  div {
+    span {
+      font-family: "comic sans ms";
+      color: #ecf0f1;
+      position: relative;
+      z-index: 5;
+    }
+  }
+}

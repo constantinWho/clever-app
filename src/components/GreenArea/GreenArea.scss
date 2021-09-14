@@ -1,0 +1,106 @@
+.green-area {
+  grid-area: green-area;
+  background-color: #27ae60;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 8.3vw 91.3vw;
+  grid-template-rows: 3vw 8.3vw 3vw;
+  grid-template-areas:
+    "arrow-img points"
+    "arrow-img input"
+    "arrow-img bonus";
+
+  .arrow-img {
+    place-self: center;
+    padding: 1vw;
+    width: 4.5vw;
+    height: 4.5vw;
+    grid-area: arrow-img;
+    grid-template-columns: 8.3vw;
+    grid-template-rows: 8.3vw;
+    background-color: #2ecc71;
+    border: #2c3e50 0.1px solid;
+    border-radius: 5px;
+  }
+  .input-wrapper {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-area: input;
+    grid-template-columns: 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw;
+    grid-template-rows: 8.3vw;
+  }
+
+  .bonus-wrapper-col {
+    grid-area: bonus;
+    z-index: 5;
+    grid-template-columns: 33.2vw 16.6vw 8.3vw 16.6vw 8.3vw 8.3vw;
+    grid-template-rows: 3vw;
+
+    .icon:nth-of-type(1) {
+      margin-left: 25vw;
+      margin-bottom: 2.4vw;
+    }
+    .icon:nth-of-type(2) {
+      margin-left: 8.5vw;
+      margin-bottom: 2.4vw;
+    }
+    .icon:nth-of-type(3) {
+      margin-left: 0.2vw;
+      margin-bottom: 2.4vw;
+    }
+    .icon:nth-of-type(4) {
+      margin-left: 8.5vw;
+      margin-bottom: 2.4vw;
+    }
+    .icon:nth-of-type(5) {
+      margin-bottom: 2.4vw;
+    }
+  }
+  .points-wrapper {
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    display: grid;
+    grid-area: points;
+    grid-template-columns: 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw;
+    grid-template-rows: 3vw;
+
+    div:first-child {
+      display: grid;
+      span {
+        font-size: 1.25vw;
+        text-align: center;
+        width: 3vw;
+        height: 3vw;
+      }
+    }
+
+    div:last-child {
+      font-style: italic;
+    }
+  }
+  .star {
+    top: 2vw;
+    left: 0.3vw;
+    background: #2ecc71;
+    width: 2.5vw;
+    height: 2.5vw;
+    position: relative;
+  }
+  .star:before,
+  .star:after {
+    content: "";
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    height: 2.5vw;
+    width: 2.5vw;
+    background: #2ecc71;
+  }
+}

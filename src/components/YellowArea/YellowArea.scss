@@ -1,0 +1,184 @@
+.yellow-area {
+  grid-area: yellow-area;
+  background-color: #f1c40f;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 36vw 9vw;
+  grid-template-rows: 36vw 9vw;
+  grid-template-areas:
+    "input-grid bonus-col"
+    "points-row bonus-col";
+
+  .input-wrapper {
+    grid-template-columns: 9vw 9vw 9vw 9vw;
+    grid-template-rows: 9vw 9vw 9vw 9vw;
+  }
+
+  .bonus-wrapper {
+    grid-template-rows: 9vw 9vw 9vw 9vw 9vw;
+  }
+
+  .points-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 9vw 9vw 9vw 9vw;
+  }
+
+  .points {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    div:first-child {
+      display: grid;
+      text-align: center;
+      .star {
+        position: absolute;
+      }
+      span {
+        width: 4vw;
+        height: 4vw;
+        font-size: 2.5vw;
+      }
+    }
+  }
+  .star {
+    background: #d35400;
+    width: 4vw;
+    height: 4vw;
+    position: relative;
+  }
+  .star:before,
+  .star:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4vw;
+    width: 4vw;
+    background: #d35400;
+  }
+  .input-wrapper {
+    $tipSize: 0.8vw;
+    $color: white;
+
+    .arrows-wrapper {
+      $margin: 0;
+      position: absolute;
+      z-index: 0;
+      left: $margin;
+      right: $margin;
+      top: $margin;
+      bottom: $margin;
+
+      &.direction-x {
+        left: 3.5vw;
+
+        .arrow {
+          left: 0;
+          right: 0;
+          height: 0.1vw;
+          transform: translateY(-50%);
+
+          &:after {
+            display: table;
+            content: "";
+            border: $tipSize solid transparent;
+            border-right: 0;
+            border-left-color: $color;
+            position: absolute;
+            top: 0.1vw;
+            right: -$tipSize;
+            transform: translateY(-50%);
+          }
+
+          &:first-child {
+            top: 12.5%;
+          }
+
+          &:nth-child(2) {
+            top: 12.5% + 25%;
+          }
+
+          &:nth-child(3) {
+            top: 12.5% + 50%;
+          }
+
+          &:last-child {
+            top: 100% - 12.5%;
+          }
+        }
+      }
+
+      &.direction-y {
+        top: 3.5vw;
+
+        .arrow {
+          top: 0;
+          bottom: 0;
+          width: 0.1vw;
+
+          &:after {
+            display: table;
+            content: "";
+            border: $tipSize solid transparent;
+            border-bottom: 0;
+            border-top-color: $color;
+            position: absolute;
+            left: 0.1vw;
+            bottom: -$tipSize;
+            transform: translateX(-50%);
+          }
+
+          &:first-child {
+            left: 12.5%;
+          }
+
+          &:nth-child(2) {
+            left: 12.5% + 25%;
+          }
+
+          &:nth-child(3) {
+            left: 12.5% + 50%;
+          }
+
+          &:last-child {
+            left: 100% - 12.5%;
+          }
+        }
+      }
+
+      &.direction-z {
+        left: 3.5vw;
+        top: 3.5vw;
+        background: linear-gradient(to top right, transparent calc(50% - 0.1vw), $color, transparent calc(50% + 0.1vw));
+
+        .arrow {
+          bottom: 0;
+          right: 0;
+          transform: rotate(45deg);
+
+          &:after {
+            display: table;
+            content: "";
+            border: $tipSize solid transparent;
+            border-right: 0;
+            border-left-color: $color;
+            position: absolute;
+            top: 0.1vw;
+            right: -$tipSize;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      background-color: $color;
+    }
+  }
+}
