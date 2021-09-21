@@ -118,16 +118,98 @@ function App() {
         { key: 11, value: 66 },
       ],
     },
+    orangeArea: {
+      input: [
+        { key: 1, value: "" },
+        { key: 2, value: "" },
+        { key: 3, value: "" },
+        { key: 4, value: "x2" },
+        { key: 5, value: "" },
+        { key: 6, value: "" },
+        { key: 7, value: "x2" },
+        { key: 8, value: "" },
+        { key: 9, value: "" },
+        { key: 10, value: "x2" },
+        { key: 11, value: "x3" },
+      ],
+      bonus: [
+        { key: 1, styleSheet: "redo", value: "REDO" },
+        { key: 2, styleSheet: "yellow", value: "X" },
+        { key: 3, styleSheet: "plus-one", value: "+1" },
+        { key: 4, styleSheet: "fox", value: "FOX" },
+        { key: 5, styleSheet: "purple", value: "6" },
+      ],
+    },
+    purpleArea: {
+      input: [
+        { key: 1, value: "" },
+        { key: 2, value: "" },
+        { key: 3, value: "" },
+        { key: 4, value: "" },
+        { key: 5, value: "" },
+        { key: 6, value: "" },
+        { key: 7, value: "" },
+        { key: 8, value: "" },
+        { key: 9, value: "" },
+        { key: 10, value: "" },
+        { key: 11, value: "" },
+      ],
+      bonus: [
+        { key: 1, styleSheet: "redo", value: "REDO" },
+        { key: 2, styleSheet: "blue", value: "X" },
+        { key: 3, styleSheet: "plus-one", value: "+1" },
+        { key: 4, styleSheet: "yellow", value: "X" },
+        { key: 5, styleSheet: "fox", value: "FOX" },
+        { key: 6, styleSheet: "redo", value: "REDO" },
+        { key: 7, styleSheet: "green", value: "X" },
+        { key: 8, styleSheet: "orange", value: "6" },
+        { key: 9, styleSheet: "plus-one", value: "+1" },
+      ],
+    },
+    gameInfo: {
+      round: [
+        { key: 1, number: 1, value: "REDO" },
+        { key: 2, number: 2, value: "+1" },
+        { key: 3, number: 3, value: "REDO" },
+        { key: 4, number: 4, value: "X|6" },
+        { key: 5, number: 5, value: "" },
+        { key: 6, number: 6, value: "" },
+      ],
+      redo: {
+        icon: { key: 0, value: "REDO" },
+        input: [
+          { key: 1, value: "" },
+          { key: 2, value: "" },
+          { key: 3, value: "" },
+          { key: 4, value: "" },
+          { key: 5, value: "" },
+          { key: 6, value: "" },
+          { key: 7, value: "" },
+        ],
+      },
+      plusOne: {
+        icon: { key: 3, styleSheet: "plus-one-counter", value: "+1" },
+        input: [
+          { key: 1, value: "" },
+          { key: 2, value: "" },
+          { key: 3, value: "" },
+          { key: 4, value: "" },
+          { key: 5, value: "" },
+          { key: 6, value: "" },
+          { key: 7, value: "" },
+        ],
+      },
+    },
   };
 
   return (
     <div className="app">
-      <GameInfo />
+      <GameInfo gameInfo={state.gameInfo} />
       <YellowArea yellowArea={state.yellowArea} />
       <BlueArea blueArea={state.blueArea} />
       <GreenArea greenArea={state.greenArea} />
-      <OrangeArea />
-      <PurpleArea />
+      <OrangeArea orangeArea={state.orangeArea} />
+      <PurpleArea purpleArea={state.purpleArea} />
     </div>
   );
 }

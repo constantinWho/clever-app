@@ -1,6 +1,6 @@
-.green-area {
-  grid-area: green-area;
-  background-color: #27ae60;
+.orange-area {
+  grid-area: orange-area;
+  background-color: #e67e22;
   display: grid;
   justify-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@
   grid-template-columns: 8.3vw 91.3vw;
   grid-template-rows: 3vw 8.3vw 3vw;
   grid-template-areas:
-    "arrow-img points"
+    "arrow-img placeholder"
     "arrow-img input"
     "arrow-img bonus";
 
@@ -20,7 +20,7 @@
     grid-area: arrow-img;
     grid-template-columns: 8.3vw;
     grid-template-rows: 8.3vw;
-    background-color: #2ecc71;
+    background-color: #f39c12;
     border: #2c3e50 0.1px solid;
     border-radius: 5px;
   }
@@ -32,48 +32,30 @@
     grid-template-columns: 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw;
     grid-template-rows: 8.3vw;
   }
-
   .bonus-wrapper-col {
     grid-area: bonus;
     z-index: 5;
-    grid-template-columns: 33.2vw 16.6vw 8.3vw 16.6vw 8.3vw 8.3vw;
+    grid-template-columns: 24.9vw 16.6vw 8.3vw 16.6vw 16.6vw 8.3vw;
     grid-template-rows: 3vw;
 
     .icon:nth-of-type(1) {
-      margin-left: 25vw;
+      margin-left: 16.8vw;
       margin-bottom: 2.4vw;
     }
     .icon:nth-of-type(2) {
-      margin-left: 8.5vw;
+      margin-left: 8.3vw;
       margin-bottom: 2.4vw;
     }
     .icon:nth-of-type(3) {
-      margin-left: 0.2vw;
       margin-bottom: 2.4vw;
     }
     .icon:nth-of-type(4) {
-      margin-left: 8.5vw;
+      margin-left: 8.3vw;
       margin-bottom: 2.4vw;
     }
     .icon:nth-of-type(5) {
+      margin-left: 8.3vw;
       margin-bottom: 2.4vw;
-    }
-  }
-  .points-wrapper {
-    margin-top: 0.1vw;
-    display: grid;
-    grid-area: points;
-    grid-template-columns: 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw;
-    grid-template-rows: 3vw;
-
-    .points {
-      background-color: #4caf50;
-      margin-top: 0.5vw;
-      justify-self: center;
-      align-self: center;
-      width: 2vw;
-      height: 2vw;
-      font-size: 1.4vw;
     }
   }
 }

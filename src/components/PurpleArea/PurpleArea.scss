@@ -1,6 +1,6 @@
-.green-area {
-  grid-area: green-area;
-  background-color: #27ae60;
+.purple-area {
+  grid-area: purple-area;
+  background-color: #8e44ad;
   display: grid;
   justify-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@
   grid-template-columns: 8.3vw 91.3vw;
   grid-template-rows: 3vw 8.3vw 3vw;
   grid-template-areas:
-    "arrow-img points"
+    "arrow-img great-sign"
     "arrow-img input"
     "arrow-img bonus";
 
@@ -20,7 +20,7 @@
     grid-area: arrow-img;
     grid-template-columns: 8.3vw;
     grid-template-rows: 8.3vw;
-    background-color: #2ecc71;
+    background-color: #9b59b6;
     border: #2c3e50 0.1px solid;
     border-radius: 5px;
   }
@@ -32,48 +32,54 @@
     grid-template-columns: 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw;
     grid-template-rows: 8.3vw;
   }
-
   .bonus-wrapper-col {
     grid-area: bonus;
     z-index: 5;
-    grid-template-columns: 33.2vw 16.6vw 8.3vw 16.6vw 8.3vw 8.3vw;
+    grid-template-columns: 24.9vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw;
     grid-template-rows: 3vw;
 
     .icon:nth-of-type(1) {
-      margin-left: 25vw;
+      margin-left: 16.6vw;
       margin-bottom: 2.4vw;
     }
     .icon:nth-of-type(2) {
-      margin-left: 8.5vw;
       margin-bottom: 2.4vw;
     }
     .icon:nth-of-type(3) {
-      margin-left: 0.2vw;
       margin-bottom: 2.4vw;
     }
     .icon:nth-of-type(4) {
-      margin-left: 8.5vw;
       margin-bottom: 2.4vw;
     }
     .icon:nth-of-type(5) {
       margin-bottom: 2.4vw;
     }
+    .icon:nth-of-type(6) {
+      margin-bottom: 2.4vw;
+    }
+    .icon:nth-of-type(7) {
+      margin-bottom: 2.4vw;
+    }
+    .icon:nth-of-type(8) {
+      margin-bottom: 2.4vw;
+    }
+    .icon:nth-of-type(9) {
+      margin-bottom: 2.4vw;
+    }
   }
-  .points-wrapper {
-    margin-top: 0.1vw;
+  .great-sign {
+    top: -2vw;
     display: grid;
-    grid-area: points;
-    grid-template-columns: 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw;
-    grid-template-rows: 3vw;
+    grid-area: great-sign;
+    grid-template-columns: 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw 8.3vw;
 
-    .points {
-      background-color: #4caf50;
-      margin-top: 0.5vw;
-      justify-self: center;
-      align-self: center;
-      width: 2vw;
-      height: 2vw;
-      font-size: 1.4vw;
+    p {
+      margin-left: 2.5vw;
+      margin-top: -1vw;
+      z-index: 6;
+      font-family: "comic sans ms";
+      font-size: 10vw;
+      color: #212121;
     }
   }
 }

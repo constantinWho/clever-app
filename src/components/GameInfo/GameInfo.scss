@@ -1,0 +1,78 @@
+.game-info {
+  display: grid;
+  grid-area: game-info;
+  background-color: rgb(74, 107, 164);
+  grid-template-columns: 20% 80%;
+  grid-auto-rows: 10vw;
+  grid-template-areas:
+    "rounds redo"
+    "rounds plus-one";
+
+  .plus-one {
+    grid-area: plus-one;
+    display: grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-auto-rows: 100%;
+    background-color: #95a5a6;
+
+    .input {
+      width: 6vw;
+      height: 6vw;
+      border-radius: 50%;
+      background-color: #ecf0f1;
+      border: 0.1px solid #34495e;
+    }
+    .bonus {
+      text-align: center;
+      color: #f1f1ec;
+      align-self: center;
+      justify-self: center;
+      width: 3.5vw;
+      height: 3.5vw;
+      background-color: #2c3e50;
+      border: #ecf0f1 0.1px solid;
+      border-radius: 5px;
+      padding: 0.5vw;
+      font-size: 2.5vw;
+      font-family: "comic sans ms";
+    }
+  }
+  .redo {
+    display: grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-auto-rows: 100%;
+    background-color: #95a5a6;
+    grid-area: redo;
+
+    .input {
+      width: 6vw;
+      height: 6vw;
+      border-radius: 50%;
+      background-color: #ecf0f1;
+      border: 0.1px solid #34495e;
+    }
+    .bonus {
+      align-self: center;
+      justify-self: center;
+      width: 3.5vw;
+      height: 3.5vw;
+      background-color: #2c3e50;
+      border: #ecf0f1 0.1px solid;
+      border-radius: 5px;
+      padding: 0.5vw;
+    }
+  }
+  .round {
+    display: grid;
+    background-color: #34495e;
+    grid-area: rounds;
+
+    .bonus {
+      justify-self: center;
+      width: 5vw;
+      border: #ecf0f1 0.1px solid;
+      border-radius: 5px;
+      padding: 0.5vw;
+    }
+  }
+}
