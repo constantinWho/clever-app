@@ -4,10 +4,15 @@ import PointsWrapper from "../Wrappers/PointsWrapper/PointsWrapper";
 import "./YellowArea.css";
 
 const YellowArea = ({ yellowArea }) => {
-  const { input, bonus, points } = yellowArea;
+  const { input, bonus, points, arrow } = yellowArea;
   return (
     <div className="yellow-area">
-      <InputWrapper input={input} arrowsX arrowsY arrowsZ />
+      <InputWrapper
+        input={input}
+        arrowsX={arrow}
+        arrowsY={arrow}
+        arrowsZ={arrow}
+      />
       <BonusWrapper bonus={bonus} />
       <PointsWrapper points={points} />
     </div>

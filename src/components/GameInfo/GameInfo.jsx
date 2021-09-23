@@ -5,7 +5,6 @@ import "./GameInfo.css";
 
 const GameInfo = ({ gameInfo }) => {
   const { redo, plusOne, round } = gameInfo;
-  console.log(gameInfo);
   return (
     <div className="game-info">
       <RoundCounter round={round} />

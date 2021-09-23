@@ -1,30 +1,6 @@
+import Arrows from "./Arrows/Arrows";
 import Input from "./Input/Input";
 import "./InputWrapper.css";
-
-const Arrows = (props) => {
-  if (props[`arrows${props.direction}`]) {
-    let numberOfArrows = (num) => {
-      switch (num) {
-        case 12:
-          return props.direction === "X" ? 3 : 4;
-        default:
-          return props.direction === "Z" ? 1 : 4;
-      }
-    };
-
-    let keyNum = 0;
-    return (
-      <div
-        className={`arrows-wrapper direction-${props.direction.toLowerCase()}`}
-      >
-        {[...Array(numberOfArrows(props.inputNum))].map((i) => (
-          <div className="arrow" key={keyNum++} />
-        ))}
-      </div>
-    );
-  }
-  return false;
-};
 
 const InputWrapper = (props) => {
   return (
@@ -40,6 +16,8 @@ const InputWrapper = (props) => {
         inputNum={props.input.length}
       />
       <Arrows direction="Z" arrowsZ={props.arrowsZ} />
+
+      {/* Input generator */}
       {props.input.map((i) => (
         <Input value={i.value} key={i.key} />
       ))}
