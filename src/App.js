@@ -12,40 +12,6 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      yellowArea: {
-        input: [
-          { key: 1, value: 3 },
-          { key: 2, value: 6 },
-          { key: 3, value: 5 },
-          { key: 4, value: "X" },
-          { key: 5, value: 2 },
-          { key: 6, value: 1 },
-          { key: 7, value: "X" },
-          { key: 8, value: 5 },
-          { key: 9, value: 1 },
-          { key: 10, value: "X" },
-          { key: 11, value: 2 },
-          { key: 12, value: 4 },
-          { key: 13, value: "X" },
-          { key: 14, value: 3 },
-          { key: 15, value: 4 },
-          { key: 16, value: 6 },
-        ],
-        bonus: [
-          { type: "col", key: 1, styleSheet: "blue", value: "X" },
-          { type: "col", key: 2, styleSheet: "orange", value: 4 },
-          { type: "col", key: 3, styleSheet: "green", value: "X" },
-          { type: "col", key: 4, styleSheet: "fox", value: "FOX" },
-          { type: "col", key: 5, styleSheet: "plus-one", value: "+1" },
-        ],
-        points: [
-          { key: 1, value: 10 },
-          { key: 2, value: 14 },
-          { key: 3, value: 16 },
-          { key: 4, value: 20 },
-        ],
-        arrow: true,
-      },
       blueArea: {
         input: [
           { key: 1, value: "BLUE-RULE" },
@@ -208,12 +174,23 @@ class App extends React.Component {
     };
   }
 
+  handleClick = function (event) {
+    this.setState((state) => {
+      state.input[event.target.getAttribute("data-index")].crossed = !state
+        .input[event.target.getAttribute("data-index")].crossed;
+      return state;
+    });
+  };
+
   render() {
     return (
       <div className="app">
         <GameInfo gameInfo={this.state.gameInfo} />
-        <YellowArea yellowArea={this.state.yellowArea} />
-        <BlueArea blueArea={this.state.blueArea} />
+        <YellowArea handleClick={this.handleClick} />
+        <BlueArea
+          blueArea={this.state.blueArea}
+          handleClick={this.handleClick}
+        />
         <GreenArea greenArea={this.state.greenArea} />
         <OrangeArea orangeArea={this.state.orangeArea} />
         <PurpleArea purpleArea={this.state.purpleArea} />

@@ -1,6 +1,7 @@
 .yellow-area {
+  --color: #f1c40f;
   grid-area: yellow-area;
-  background-color: #f1c40f;
+  background-color: var(--color);
   display: grid;
   justify-items: center;
   justify-content: center;
@@ -147,7 +148,8 @@
     }
   }
   .points {
-    background-color: #e67e22;
+    background-color: var(--color);
+    filter: saturate(150%);
     align-self: center;
     justify-self: center;
     width: 3.5vw;

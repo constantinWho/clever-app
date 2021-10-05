@@ -1,6 +1,7 @@
 .blue-area {
+  --color: #3498db;
   grid-area: blue-area;
-  background-color: #3498db;
+  background-color: var(--color);
   display: grid;
   justify-items: center;
   justify-content: center;
@@ -31,7 +32,8 @@
   }
 
   .points {
-    background-color: #2980b9;
+    background-color: var(--color);
+    filter: saturate(150%);
     justify-self: center;
     align-self: center;
     width: 2.5vw;
@@ -130,5 +132,10 @@
       position: absolute;
       background-color: $color;
     }
+  }
+
+  .dice {
+    width: 9vw;
+    height: 9vw;
   }
 }

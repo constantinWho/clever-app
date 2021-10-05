@@ -18,8 +18,13 @@ const InputWrapper = (props) => {
       <Arrows direction="Z" arrowsZ={props.arrowsZ} />
 
       {/* Input generator */}
-      {props.input.map((i) => (
-        <Input value={i.value} key={i.key} />
+      {props.input.map((input, i) => (
+        <Input
+          handleClick={props.handleClick}
+          key={input.key}
+          input={input}
+          index={i}
+        />
       ))}
     </div>
   );
