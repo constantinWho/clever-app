@@ -1,13 +1,18 @@
+import shortid from "shortid";
 import redoIMG from "../../Wrappers/BonusWrapper/Bonus/redo.png";
 
-const RedoCounter = ({ redo }) => {
-  const { input } = redo;
+const RedoCounter = ({redo}) => {
+  const {input} = redo;
+
+  const renderedRow = input.map(() => (
+    <button
+      className="input"
+      key={shortid.generate()}></button>
+  ))
+
   return (
     <div className="redo">
-      <img className="bonus" src={redoIMG} alt="redo" />
-      {input.map((i) => (
-        <button className="input" key={i.key}></button>
-      ))}
+      <img className="bonus" src={redoIMG} alt="redo"/> {renderedRow}
     </div>
   );
 };

@@ -6,30 +6,30 @@
   justify-items: center;
   justify-content: center;
   align-content: center;
-  grid-template-columns: 36vw 9vw;
-  grid-template-rows: 36vw 9vw;
+  grid-template-columns: 16em 4em;
+  grid-template-rows: 16em 4em;
   grid-template-areas:
     "input-grid bonus-col"
     "points-row bonus-col";
 
   .input-wrapper {
-    grid-template-columns: 9vw 9vw 9vw 9vw;
-    grid-template-rows: 9vw 9vw 9vw 9vw;
+    grid-template-columns: 4em 4em 4em 4em;
+    grid-template-rows: 4em 4em 4em 4em;
   }
 
   .bonus-wrapper {
-    grid-template-rows: 9vw 9vw 9vw 9vw 9vw;
+    grid-template-rows: 4em 4em 4em 4em 4em;
   }
 
   .points-wrapper {
     display: grid;
     justify-content: center;
-    grid-template-columns: 9vw 9vw 9vw 9vw;
+    grid-template-columns: 4em 4em 4em 4em;
   }
 
   .input-wrapper {
-    $tipSize: 0.8vw;
-    $color: white;
+    $tipSize: 0.5em;
+    $color: #ecf0f1;
 
     .arrows-wrapper {
       $margin: 0;
@@ -41,12 +41,12 @@
       bottom: $margin;
 
       &.direction-x {
-        left: 3.5vw;
+        left: 2em;
 
         .arrow {
           left: 0;
           right: 0;
-          height: 0.1vw;
+          height: 0.1em;
           transform: translateY(-50%);
 
           &:after {
@@ -56,7 +56,7 @@
             border-right: 0;
             border-left-color: $color;
             position: absolute;
-            top: 0.1vw;
+            top: 0.05em;
             right: -$tipSize;
             transform: translateY(-50%);
           }
@@ -80,12 +80,12 @@
       }
 
       &.direction-y {
-        top: 3.5vw;
+        top: 2em;
 
         .arrow {
           top: 0;
           bottom: 0;
-          width: 0.1vw;
+          width: 0.1em;
 
           &:after {
             display: table;
@@ -94,7 +94,7 @@
             border-bottom: 0;
             border-top-color: $color;
             position: absolute;
-            left: 0.1vw;
+            left: 0.05em;
             bottom: -$tipSize;
             transform: translateX(-50%);
           }
@@ -118,9 +118,9 @@
       }
 
       &.direction-z {
-        left: 3.5vw;
-        top: 3.5vw;
-        background: linear-gradient(to top right, transparent calc(50% - 0.1vw), $color, transparent calc(50% + 0.1vw));
+        left: 2em;
+        top: 2em;
+        background: linear-gradient(to top right, transparent calc(50% - 0.1em), $color, transparent calc(50% + 0.1em));
 
         .arrow {
           bottom: 0;
@@ -134,7 +134,6 @@
             border-right: 0;
             border-left-color: $color;
             position: absolute;
-            top: 0.1vw;
             right: -$tipSize;
             transform: translateY(-50%);
           }
@@ -148,11 +147,14 @@
     }
   }
   .points {
-    background-color: var(--color);
-    filter: saturate(150%);
     align-self: center;
     justify-self: center;
-    width: 3.5vw;
-    height: 3.5vw;
+    p {
+      background-color: #fbc02d;
+    }
+  }
+  .selected {
+    color: #fbc02d;
+    background-color: #2c3e50;
   }
 }

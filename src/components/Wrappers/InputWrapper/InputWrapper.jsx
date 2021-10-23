@@ -1,31 +1,31 @@
+import shortid from 'shortid';
 import Arrows from "./Arrows/Arrows";
 import Input from "./Input/Input";
 import "./InputWrapper.css";
 
-const InputWrapper = (props) => {
-  return (
+const InputWrapper = ({input, arrowsX, arrowsY, arrowsZ}) => {
+  const renderedInput = input.map((input, i) => (
+    <Input
+      key={shortid.generate()}
+      value={input}
+      input={input}
+      index={i}
+    />))
+
+    return (
     <div className="input-wrapper">
       <Arrows
         direction="X"
-        arrowsX={props.arrowsX}
-        inputNum={props.input.length}
+        arrowsX={arrowsX}
+        inputNum={input.length}
       />
       <Arrows
         direction="Y"
-        arrowsY={props.arrowsY}
-        inputNum={props.input.length}
+        arrowsY={arrowsY}
+        inputNum={input.length}
       />
-      <Arrows direction="Z" arrowsZ={props.arrowsZ} />
-
-      {/* Input generator */}
-      {props.input.map((input, i) => (
-        <Input
-          handleClick={props.handleClick}
-          key={input.key}
-          input={input}
-          index={i}
-        />
-      ))}
+      <Arrows direction="Z" arrowsZ={arrowsZ} />
+      {renderedInput}
     </div>
   );
 };

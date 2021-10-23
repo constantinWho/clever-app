@@ -1,6 +1,3 @@
-hmtl {
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -11,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
+  font-size: 16px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
@@ -19,4 +17,24 @@ body {
     "green-area green-area"
     "orange-area orange-area"
     "purple-area purple-area";
+
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "game-info game-info"
+      "yellow-area yellow-area "
+      "blue-area blue-area"
+      "green-area green-area"
+      "orange-area orange-area"
+      "purple-area purple-area";
+
+    .gameInfo {
+      button.input {
+        height: 3px;
+        width: 3px;
+      }
+    }
+  }
 }
