@@ -3,8 +3,8 @@ const PlusOneCounter = ({ plusOne }) => {
   return (
     <div className="plus-one">
       <p className="bonus">+1</p>
-      {input.map((i) => (
-        <button className="input" key={i.key}></button>
+      {input.map((obj, i) => (
+        <button className="input" key={i}></button>
       ))}
     </div>
   );

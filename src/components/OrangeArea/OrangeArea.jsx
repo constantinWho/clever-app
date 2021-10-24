@@ -48,11 +48,11 @@ const OrangeArea = () => {
       value: "6"
     }
   ]
-  
+
   return (
     <div className="orange-area">
       <img src={arrow} alt="arrow" className="arrow-img"/>
-      <InputWrapper input={input}/>
+      <InputWrapper input={input} oneByOne={true} type='number'/>
       <BonusWrapper bonus={bonus}/>
     </div>
   );

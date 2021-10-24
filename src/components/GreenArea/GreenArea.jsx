@@ -79,7 +79,7 @@ const GreenArea = () => {
     <div className="green-area">
       <img src={arrow} alt="arrow" className="arrow-img"/>
       <PointsWrapper points={points}/>
-      <InputWrapper input={input}/>
+      <InputWrapper input={input} oneByOne={true} />
       <BonusWrapper bonus={bonus}/>
     </div>
   );

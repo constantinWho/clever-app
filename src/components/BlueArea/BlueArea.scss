@@ -73,15 +73,15 @@
 
           &:first-child {
             left: 20%;
-            top: 17%;
+            top: 15%;
           }
 
           &:nth-child(2) {
-            top: 17% + 33%;
+            top: 15% + 33%;
           }
 
           &:last-child {
-            top: 100% - 17%;
+            top: 100% - 18%;
           }
         }
       }
@@ -108,19 +108,19 @@
 
           &:first-child {
             top: 30%;
-            left: 12.5%;
+            left: 11%;
           }
 
           &:nth-child(2) {
-            left: 12.5% + 25%;
+            left: 11% + 25%;
           }
 
           &:nth-child(3) {
-            left: 12.5% + 50%;
+            left: 11% + 50%;
           }
 
           &:last-child {
-            left: 100% - 12.5%;
+            left: 100% - 14%;
           }
         }
       }

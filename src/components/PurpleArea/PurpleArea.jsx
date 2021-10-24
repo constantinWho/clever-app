@@ -1,4 +1,3 @@
-import shortid from "shortid";
 import InputWrapper from "../Wrappers/InputWrapper/InputWrapper";
 import BonusWrapper from "../Wrappers/BonusWrapper/BonusWrapper";
 import arrow from "../Wrappers/arrow.png";
@@ -61,29 +60,12 @@ const PurpleArea = () => {
     }
   ]
 
-  const greaterSigns = [
-    "<",
-    "<",
-    "<",
-    "<",
-    "<",
-    "<",
-    "<",
-    "<",
-    "<",
-    "<"
-  ];
 
   return (
     <div className="purple-area">
       <img src={arrow} alt="arrow" className="arrow-img"/>
-      <div className="great-sign">
-        {greaterSigns.map((g) => (
-          <p key={shortid.generate()}>{g}</p>
-        ))}
-      </div>
-      <InputWrapper input={input}/>
-      <BonusWrapper bonus={bonus}/>
+      <InputWrapper input={input} smallerSign={true} />
+      <BonusWrapper bonus={bonus} />
     </div>
   );
 };

@@ -62,19 +62,19 @@
           }
 
           &:first-child {
-            top: 12.5%;
+            top: 11%;
           }
 
           &:nth-child(2) {
-            top: 12.5% + 25%;
+            top: 11% + 25%;
           }
 
           &:nth-child(3) {
-            top: 12.5% + 50%;
+            top: 11% + 50%;
           }
 
           &:last-child {
-            top: 100% - 12.5%;
+            top: 100% - 14%;
           }
         }
       }
@@ -100,19 +100,19 @@
           }
 
           &:first-child {
-            left: 12.5%;
+            left: 11%;
           }
 
           &:nth-child(2) {
-            left: 12.5% + 25%;
+            left: 11% + 25%;
           }
 
           &:nth-child(3) {
-            left: 12.5% + 50%;
+            left: 11% + 50%;
           }
 
           &:last-child {
-            left: 100% - 12.5%;
+            left: 100% - 14%;
           }
         }
       }
@@ -120,7 +120,13 @@
       &.direction-z {
         left: 2em;
         top: 2em;
-        background: linear-gradient(to top right, transparent calc(50% - 0.1em), $color, transparent calc(50% + 0.1em));
+        background: linear-gradient(
+          to top right,
+          transparent calc(50% - 0.05em),
+          $color calc(50% - 0.05em),
+          $color calc(50% + 0.05em),
+          transparent calc(50% + 0.05em)
+        );
 
         .arrow {
           bottom: 0;
@@ -151,6 +157,12 @@
     justify-self: center;
     p {
       background-color: #fbc02d;
+    }
+  }
+  .input {
+    &[disabled] {
+      color: #2c3e50;
+      background: #7f8c8d;
     }
   }
   .selected {
