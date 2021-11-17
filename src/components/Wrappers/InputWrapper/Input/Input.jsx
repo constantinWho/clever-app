@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import './Input.css'
 import { useState } from 'react'
@@ -10,14 +11,54 @@ const Input = ({
 	termChanged,
 	tooltip,
 	oneByOne,
+	isBigger,
 }) => {
 	const [term, setTerm] = useState(input.value)
+	const [points, setPoints] = useState(false)
+	const [tooltipIsOpen, setTooltipIsOpen] = useState(false)
 
-	const tooltipElements = () => {
+	useMemo(() => {
+		if (tooltip) {
+			window.addEventListener('mouseup', _ => {
+				setTooltipIsOpen(false)
+			})
+		}
+	}, [tooltip])
+
+	const pointsHandler = event => {
+		setTooltipIsOpen(false)
+		let p = event.target.value
+		switch (input.value) {
+			case 'x2':
+				p *= 2
+				break
+			case 'x3':
+				p *= 3
+				break
+			default:
+		}
+		if (isBigger && p <= 6 && p >= index + 1) {
+			console.log(index)
+			console.log(p)
+			setPoints(p)
+		}
+		setTerm('X')
+		let crossedCopy = crossed.slice(0)
+		crossedCopy[index] = !crossedCopy[index]
+		termChanged(crossedCopy)
+	}
+
+	const tooltipElements = index => {
 		const choices = [1, 2, 3, 4, 5, 6]
 
 		const renderedChoices = choices.map(choice => (
-			<button key={choice}>{choice}</button>
+			<button
+				onClick={pointsHandler}
+				data-crossed={input.crossed ? true : null}
+				key={choice}
+				value={choice}>
+				{choice}
+			</button>
 		))
 
 		return <div>{renderedChoices}</div>
@@ -36,6 +77,8 @@ const Input = ({
 		</svg>
 	) : input.crossed ? (
 		'X'
+	) : points ? (
+		points
 	) : (
 		term
 	)
@@ -49,15 +92,22 @@ const Input = ({
 		// - this is NOT a oneByOne block (yellow or blue)
 		// - the next input is NOT crossed (you can always undo the last input)
 		// - this input is not crossed yet (crossing is allowed, uncrossing is not always)
-		return !tooltip && (!oneByOne || !crossed[index + 1] || term !== 'X')
+		return (
+			(!tooltip || term === 'X') &&
+			(!oneByOne || !crossed[index + 1] || term !== 'X')
+		)
 	}
 
 	const onClick = () => {
 		if (isClickable()) {
+			setPoints(false)
 			setTerm(term === 'X' ? input.value : 'X')
 			let crossedCopy = crossed.slice(0)
 			crossedCopy[index] = !crossedCopy[index]
 			termChanged(crossedCopy)
+			console.log(crossedCopy)
+		} else if (tooltip) {
+			setTooltipIsOpen(true)
 		}
 	}
 
@@ -76,9 +126,15 @@ const Input = ({
 	}
 
 	const tooltipCheck = () => {
-		if (tooltip && !crossed[index] && active) {
+		if (tooltip && !crossed[index] && !tooltip[index] && active) {
 			return (
-				<Tooltip title={tooltipElements()} arrow>
+				<Tooltip
+					open={tooltipIsOpen}
+					disableFocusListener
+					disableHoverListener
+					disableTouchListener
+					title={tooltipElements(index)}
+					arrow>
 					<span>{inputButton()}</span>
 				</Tooltip>
 			)

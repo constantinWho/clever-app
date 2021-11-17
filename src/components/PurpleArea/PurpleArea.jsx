@@ -83,6 +83,7 @@ const PurpleArea = () => {
 			<img src={arrow} alt='arrow' className='arrow-img' />
 			<InputWrapper
 				input={input}
+				isBigger={true}
 				tooltip={true}
 				smallerSign={true}
 				oneByOne={true}

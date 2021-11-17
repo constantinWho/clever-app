@@ -12,6 +12,7 @@ const InputWrapper = ({
 	arrowsZ,
 	type,
 	tooltip,
+	isBigger,
 }) => {
 	const [crossed, setCrossed] = useState([])
 
@@ -20,6 +21,7 @@ const InputWrapper = ({
 			<div key={i} className='input-container'>
 				{smallerSign && i ? <div className='smaller-sign'></div> : null}
 				<Input
+					isBigger={isBigger}
 					tooltip={tooltip}
 					key={i}
 					oneByOne={oneByOne}

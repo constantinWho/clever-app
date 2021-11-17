@@ -1,13 +1,22 @@
-const PlusOneCounter = ({ plusOne }) => {
-  const { input } = plusOne;
-  return (
-    <div className="plus-one">
-      <p className="bonus">+1</p>
-      {input.map((obj, i) => (
-        <button className="input" key={i}></button>
-      ))}
-    </div>
-  );
-};
+import InputWrapper from '../../Wrappers/InputWrapper/InputWrapper'
 
-export default PlusOneCounter;
+const PlusOneCounter = () => {
+	const input = [
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+	]
+
+	return (
+		<div className='plus-one'>
+			<p className='bonus'>+1</p>
+			<InputWrapper className='input' input={input} />
+		</div>
+	)
+}
+
+export default PlusOneCounter

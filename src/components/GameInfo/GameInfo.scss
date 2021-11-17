@@ -1,62 +1,63 @@
 .game-info {
-  display: grid;
-  grid-area: game-info;
-  background-color: rgb(74, 107, 164);
-  grid-template-columns: 2fr 8fr;
-  grid-auto-rows: 5em;
-  grid-template-areas:
-    "rounds redo"
-    "rounds plus-one";
+	display: grid;
+	grid-area: game-info;
+	grid-template-columns: 1fr 8fr;
+	grid-auto-rows: 5em;
+	grid-template-areas:
+		'rounds redo '
+		'rounds plus-one ';
 
-  .plus-one,
-  .redo {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-rows: 100%;
-    background-color: #95a5a6;
-    width: 100%;
+	.plus-one,
+	.redo {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 7fr;
+		background-color: #95a5a6;
+		grid-template-areas: 'bonus input';
+		.input-wrapper {
+			grid-area: input;
+			grid-template-columns: repeat(7, 1fr);
+			.input-container {
+				.input {
+					border-radius: 50%;
+					background-color: #ecf0f1;
+					border: 0.1px solid #34495e;
+				}
+			}
+		}
+		.bonus-wrapper-row {
+			grid-area: bonus;
+			.bonus {
+				color: #f1f1ec;
+				background-color: #2c3e50;
+				border: #ecf0f1 0.1px solid;
+				border-radius: 5px;
+				width: 2em;
+				height: 2em;
+				font-family: 'comic sans ms';
+			}
+		}
+	}
 
-    .input {
-      width: 3em;
-      height: 3em;
-      border-radius: 50%;
-      background-color: #ecf0f1;
-      border: 0.1px solid #34495e;
-    }
-    .bonus {
-      text-align: center;
-      color: #f1f1ec;
-      align-self: center;
-      justify-self: center;
-      width: 1em;
-      height: 1em;
-      background-color: #2c3e50;
-      border: #ecf0f1 0.1px solid;
-      border-radius: 5px;
-      padding: 0.3em;
-      font-size: 2em;
-      font-family: "comic sans ms";
-    }
-  }
+	.plus-one {
+		grid-area: plus-one;
+	}
+	.redo {
+		grid-area: redo;
+	}
 
-  .plus-one {
-    grid-area: plus-one;
-  }
-  .redo {
-    grid-area: redo;
-  }
+	.round {
+		display: grid;
+		background-color: #34495e;
+		grid-area: rounds;
 
-  .round {
-    display: grid;
-    background-color: #34495e;
-    grid-area: rounds;
-
-    .bonus {
-      justify-self: center;
-      width: 3em;
-      border: #ecf0f1 0.1px solid;
-      border-radius: 5px;
-      padding: 0.5em;
-    }
-  }
+		.bonus {
+			grid-area: bonus;
+			justify-self: center;
+			width: 3em;
+			border: #ecf0f1 0.1px solid;
+			border-radius: 5px;
+			padding: 0.5em;
+		}
+	}
 }

@@ -1,20 +1,24 @@
-import shortid from "shortid";
-import redoIMG from "../../Wrappers/BonusWrapper/Bonus/redo.png";
+import InputWrapper from '../../Wrappers/InputWrapper/InputWrapper'
+import BonusWrapper from '../../Wrappers/BonusWrapper/BonusWrapper'
 
-const RedoCounter = ({redo}) => {
-  const {input} = redo;
+const RedoCounter = () => {
+	const bonus = [{ styleSheet: 'redo', value: 'REDO' }]
+	const input = [
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+		{ value: '' },
+	]
 
-  const renderedRow = input.map(() => (
-    <button
-      className="input"
-      key={shortid.generate()}></button>
-  ))
+	return (
+		<div className='redo'>
+			<BonusWrapper className='bonus' bonus={bonus} />
+			<InputWrapper className='input' input={input} />
+		</div>
+	)
+}
 
-  return (
-    <div className="redo">
-      <img className="bonus" src={redoIMG} alt="redo"/> {renderedRow}
-    </div>
-  );
-};
-
-export default RedoCounter;
+export default RedoCounter
