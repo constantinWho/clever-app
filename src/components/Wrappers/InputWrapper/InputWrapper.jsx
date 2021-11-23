@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Arrows from './Arrows/Arrows'
 import Input from './Input/Input'
 import './InputWrapper.css'
@@ -15,27 +15,37 @@ const InputWrapper = ({
 	isBigger,
 }) => {
 	const [crossed, setCrossed] = useState([])
+	const [previousP, setPreviousP] = useState([])
 
+	let inputBox = false
 	const renderedInput = input.map((input, i) => {
+		inputBox = (
+			<Input
+				prevInputBox={inputBox}
+				isBigger={isBigger}
+				previousP={previousP}
+				setPreviousP={setPreviousP}
+				tooltip={tooltip}
+				key={i}
+				oneByOne={oneByOne}
+				active={!oneByOne || !i || crossed[i - 1]}
+				value={input}
+				input={input}
+				index={i}
+				type={type}
+				crossed={crossed}
+				termChanged={setCrossed}
+			/>
+		)
 		return (
 			<div key={i} className='input-container'>
 				{smallerSign && i ? <div className='smaller-sign'></div> : null}
-				<Input
-					isBigger={isBigger}
-					tooltip={tooltip}
-					key={i}
-					oneByOne={oneByOne}
-					active={!oneByOne || !i || crossed[i - 1]}
-					value={input}
-					input={input}
-					index={i}
-					type={type}
-					crossed={crossed}
-					termChanged={setCrossed}
-				/>
+				{inputBox}
 			</div>
 		)
 	})
+
+	console.log(useRef())
 
 	return (
 		<div className='input-wrapper'>

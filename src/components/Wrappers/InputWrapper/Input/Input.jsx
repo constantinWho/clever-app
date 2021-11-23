@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useEffect } from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import './Input.css'
 import { useState } from 'react'
@@ -12,10 +12,17 @@ const Input = ({
 	tooltip,
 	oneByOne,
 	isBigger,
+	previousP,
+	setPreviousP,
+	prevInputBox,
 }) => {
 	const [term, setTerm] = useState(input.value)
 	const [points, setPoints] = useState(false)
 	const [tooltipIsOpen, setTooltipIsOpen] = useState(false)
+
+	const getPoints = _ => {
+		return points
+	}
 
 	useMemo(() => {
 		if (tooltip) {
@@ -26,8 +33,9 @@ const Input = ({
 	}, [tooltip])
 
 	const pointsHandler = event => {
+		console.log(prevInputBox)
 		setTooltipIsOpen(false)
-		let p = event.target.value
+		let p = +event.target.value
 		switch (input.value) {
 			case 'x2':
 				p *= 2
@@ -37,15 +45,23 @@ const Input = ({
 				break
 			default:
 		}
-		if (isBigger && p <= 6 && p >= index + 1) {
-			console.log(index)
-			console.log(p)
+		console.log({
+			p,
+			previousP,
+			isBigger,
+		})
+
+		if (p > previousP || previousP === 6 || !isBigger) {
+			if (isBigger) {
+				setPreviousP(p)
+			}
+
 			setPoints(p)
+			setTerm('X')
+			let crossedCopy = crossed.slice(0)
+			crossedCopy[index] = !crossedCopy[index]
+			termChanged(crossedCopy)
 		}
-		setTerm('X')
-		let crossedCopy = crossed.slice(0)
-		crossedCopy[index] = !crossedCopy[index]
-		termChanged(crossedCopy)
 	}
 
 	const tooltipElements = index => {
@@ -129,6 +145,7 @@ const Input = ({
 		if (tooltip && !crossed[index] && !tooltip[index] && active) {
 			return (
 				<Tooltip
+					data-crossed={input.crossed ? true : null}
 					open={tooltipIsOpen}
 					disableFocusListener
 					disableHoverListener
