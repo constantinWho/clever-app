@@ -3,7 +3,7 @@ import BonusWrapper from '../Wrappers/BonusWrapper/BonusWrapper'
 import arrow from '../Wrappers/arrow.png'
 import './OrangeArea.css'
 
-const OrangeArea = () => {
+const OrangeArea = props => {
 	const input = [
 		{
 			value: '',
@@ -63,9 +63,14 @@ const OrangeArea = () => {
 	]
 
 	return (
-		<div className='orange-area'>
+		<div className='orangeA'>
 			<img src={arrow} alt='arrow' className='arrow-img' />
-			<InputWrapper input={input} tooltip={true} oneByOne={true} />
+			<InputWrapper
+				props={props}
+				input={input}
+				tooltip={true}
+				oneByOne={true}
+			/>
 			<BonusWrapper bonus={bonus} />
 		</div>
 	)

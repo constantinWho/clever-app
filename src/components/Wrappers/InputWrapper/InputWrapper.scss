@@ -1,5 +1,30 @@
 .input-wrapper {
-  grid-area: input-grid;
-  display: grid;
-  position: relative;
+	grid-area: input-grid;
+	display: grid;
+	position: relative;
+}
+
+.input-tooltip {
+	white-space: nowrap;
+	max-width: 100%;
+}
+
+.tooltip-button {
+	border-radius: 5px;
+	font-size: 2em;
+	box-sizing: border-box;
+	display: inline-block;
+	margin: 0 0.1em;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 0.2em 0.5em;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+
+	&:first-child {
+		margin-left: 0;
+	}
+	&:last-child {
+		margin-right: 0;
+	}
 }

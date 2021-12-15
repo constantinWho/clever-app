@@ -1,11 +1,11 @@
-import "./Points.css";
+import './Points.css'
 
 const Points = ({ value }) => {
-  return <div className="points">
-          <p>
-            {value}
-          </p>
-        </div>;
-};
+	return (
+		<div className='points'>
+			<p>{value}</p>
+		</div>
+	)
+}
 
-export default Points;
+export default Points

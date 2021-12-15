@@ -3,7 +3,7 @@ import BonusWrapper from '../Wrappers/BonusWrapper/BonusWrapper'
 import arrow from '../Wrappers/arrow.png'
 import './PurpleArea.css'
 
-const PurpleArea = () => {
+const PurpleArea = props => {
 	const input = [
 		{
 			value: '',
@@ -79,9 +79,10 @@ const PurpleArea = () => {
 	]
 
 	return (
-		<div className='purple-area'>
+		<div className='purpleA'>
 			<img src={arrow} alt='arrow' className='arrow-img' />
 			<InputWrapper
+				props={props}
 				input={input}
 				isBigger={true}
 				tooltip={true}

@@ -4,7 +4,7 @@ import PointsWrapper from '../Wrappers/PointsWrapper/PointsWrapper'
 import './BlueArea.css'
 import React from 'react'
 
-const BlueArea = () => {
+const BlueArea = props => {
 	const input = [
 		{
 			disabled: true,
@@ -122,9 +122,9 @@ const BlueArea = () => {
 	]
 
 	return (
-		<div className='blue-area'>
+		<div className='blueA'>
 			<PointsWrapper points={points} />
-			<InputWrapper input={input} arrowsX arrowsY />
+			<InputWrapper props={props} input={input} arrowsX arrowsY />
 			<BonusWrapper bonus={bonus.col} />
 			<BonusWrapper bonus={bonus.row} />
 		</div>

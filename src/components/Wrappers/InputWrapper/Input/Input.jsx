@@ -1,28 +1,22 @@
-import { useMemo, useEffect } from 'react'
 import Tooltip from '@mui/material/Tooltip'
+import { useEffect, useMemo, useState } from 'react'
 import './Input.css'
-import { useState } from 'react'
 
 const Input = ({
 	index,
 	input,
+	inputs,
 	active,
 	crossed,
 	termChanged,
 	tooltip,
 	oneByOne,
 	isBigger,
-	previousP,
-	setPreviousP,
 	prevInputBox,
 }) => {
 	const [term, setTerm] = useState(input.value)
 	const [points, setPoints] = useState(false)
 	const [tooltipIsOpen, setTooltipIsOpen] = useState(false)
-
-	const getPoints = _ => {
-		return points
-	}
 
 	useMemo(() => {
 		if (tooltip) {
@@ -33,9 +27,8 @@ const Input = ({
 	}, [tooltip])
 
 	const pointsHandler = event => {
-		console.log(prevInputBox)
 		setTooltipIsOpen(false)
-		let p = +event.target.value
+		let p = +event.target.textContent
 		switch (input.value) {
 			case 'x2':
 				p *= 2
@@ -45,17 +38,9 @@ const Input = ({
 				break
 			default:
 		}
-		console.log({
-			p,
-			previousP,
-			isBigger,
-		})
 
+		let previousP = index ? inputs[index - 1].points : 0
 		if (p > previousP || previousP === 6 || !isBigger) {
-			if (isBigger) {
-				setPreviousP(p)
-			}
-
 			setPoints(p)
 			setTerm('X')
 			let crossedCopy = crossed.slice(0)
@@ -64,24 +49,32 @@ const Input = ({
 		}
 	}
 
+	useEffect(
+		_ => {
+			inputs[index].points = points
+		},
+		[points, inputs, index]
+	)
+
 	const tooltipElements = index => {
 		const choices = [1, 2, 3, 4, 5, 6]
 
 		const renderedChoices = choices.map(choice => (
-			<button
+			<div
+				className='tooltip-button'
 				onClick={pointsHandler}
 				data-crossed={input.crossed ? true : null}
 				key={choice}
 				value={choice}>
 				{choice}
-			</button>
+			</div>
 		))
 
-		return <div>{renderedChoices}</div>
+		return <div className='tooltip-container'>{renderedChoices}</div>
 	}
 
 	const selectTerm = input.dice ? (
-		<svg width='640px' height='512px' viewBox='0 0 640 512' version='1.1'>
+		<svg width='100%' height='100%' viewBox='0 0 640 512' version='1.1'>
 			<path
 				className='dice-front'
 				d='M433.63,189.3 L258.7,14.37 C239.54,-4.79 208.47,-4.79 189.31,14.37 L14.37,189.3 C-4.79,208.46 -4.79,239.53 14.37,258.69 L189.3,433.63 C208.46,452.79 239.53,452.79 258.69,433.63 L433.63,258.7 C452.79,239.53 452.79,208.46 433.63,189.3 L433.63,189.3 Z M96,248 C82.75,248 72,237.25 72,224 C72,210.74 82.75,200 96,200 C109.25,200 120,210.74 120,224 C120,237.25 109.25,248 96,248 L96,248 Z M224,376 C210.75,376 200,365.25 200,352 C200,338.74 210.75,328 224,328 C237.25,328 248,338.74 248,352 C248,365.25 237.25,376 224,376 L224,376 Z M224,248 C210.75,248 200,237.25 200,224 C200,210.74 210.75,200 224,200 C237.25,200 248,210.74 248,224 C248,237.25 237.25,248 224,248 L224,248 Z M224,120 C210.75,120 200,109.25 200,96 C200,82.74 210.75,72 224,72 C237.25,72 248,82.74 248,96 C248,109.25 237.25,120 224,120 L224,120 Z M352,248 C338.75,248 328,237.25 328,224 C328,210.74 338.75,200 352,200 C365.25,200 376,210.74 376,224 C376,237.25 365.25,248 352,248 L352,248 Z'
@@ -108,6 +101,7 @@ const Input = ({
 		// - this is NOT a oneByOne block (yellow or blue)
 		// - the next input is NOT crossed (you can always undo the last input)
 		// - this input is not crossed yet (crossing is allowed, uncrossing is not always)
+
 		return (
 			(!tooltip || term === 'X') &&
 			(!oneByOne || !crossed[index + 1] || term !== 'X')
@@ -121,6 +115,7 @@ const Input = ({
 			let crossedCopy = crossed.slice(0)
 			crossedCopy[index] = !crossedCopy[index]
 			termChanged(crossedCopy)
+
 			console.log(crossedCopy)
 		} else if (tooltip) {
 			setTooltipIsOpen(true)
@@ -141,10 +136,13 @@ const Input = ({
 		)
 	}
 
+	// console.log({ active: !active, input: input.disabled })
+
 	const tooltipCheck = () => {
 		if (tooltip && !crossed[index] && !tooltip[index] && active) {
 			return (
 				<Tooltip
+					classes={{ tooltip: 'input-tooltip' }}
 					data-crossed={input.crossed ? true : null}
 					open={tooltipIsOpen}
 					disableFocusListener
@@ -152,7 +150,9 @@ const Input = ({
 					disableTouchListener
 					title={tooltipElements(index)}
 					arrow>
-					<span>{inputButton()}</span>
+					<span className={tooltipIsOpen ? 'active-button' : ''}>
+						{inputButton()}
+					</span>
 				</Tooltip>
 			)
 		} else {

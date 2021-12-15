@@ -1,7 +1,7 @@
 import InputWrapper from '../../Wrappers/InputWrapper/InputWrapper'
 import BonusWrapper from '../../Wrappers/BonusWrapper/BonusWrapper'
 
-const RedoCounter = () => {
+const RedoCounter = ({ redos }) => {
 	const bonus = [{ styleSheet: 'redo', value: 'REDO' }]
 	const input = [
 		{ value: '' },
@@ -16,7 +16,11 @@ const RedoCounter = () => {
 	return (
 		<div className='redo'>
 			<BonusWrapper className='bonus' bonus={bonus} />
-			<InputWrapper className='input' input={input} />
+			<InputWrapper
+				activeInputs={redos}
+				className='input'
+				input={input}
+			/>
 		</div>
 	)
 }

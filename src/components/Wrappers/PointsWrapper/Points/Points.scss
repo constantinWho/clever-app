@@ -1,15 +1,16 @@
 .points {
-  font-family: "comic sans ms";
-  color: #ecf0f1;
-  z-index: 5;
-  p {
-    color: #2c3e50;
-    padding: 0.02em;
-    height: 1.5em;
-    width: 1.5em;
-    font-size: 1em;
-    text-align: center;
-    border: 0.1px solid #2c3e50;
-    border-radius: 50%;
-  }
+	color: #ecf0f1;
+	z-index: 5;
+
+	p {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #2c3e50;
+		height: 1.5em;
+		width: 1.5em;
+		text-align: center;
+		border: 0.1px solid #2c3e50;
+		border-radius: 50%;
+	}
 }

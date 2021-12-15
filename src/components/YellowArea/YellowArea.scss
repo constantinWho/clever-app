@@ -1,172 +1,167 @@
-.yellow-area {
-  --color: #f1c40f;
-  grid-area: yellow-area;
-  background-color: var(--color);
-  display: grid;
-  justify-items: center;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: 16em 4em;
-  grid-template-rows: 16em 4em;
-  grid-template-areas:
-    "input-grid bonus-col"
-    "points-row bonus-col";
+.yellowA {
+	padding-left: env(safe-area-inset-left);
+	--color: #f1c40f;
+	grid-area: yellow-area;
+	background-color: var(--color);
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: 16em 4em;
+	grid-template-rows: 16em 4em;
+	grid-template-areas:
+		'input-grid bonus-col'
+		'points-row bonus-col';
 
-  .input-wrapper {
-    grid-template-columns: 4em 4em 4em 4em;
-    grid-template-rows: 4em 4em 4em 4em;
-  }
+	.input-wrapper {
+		grid-template-columns: 4em 4em 4em 4em;
+		grid-template-rows: 4em 4em 4em 4em;
+	}
 
-  .bonus-wrapper {
-    grid-template-rows: 4em 4em 4em 4em 4em;
-  }
+	.bonus-wrapper {
+		grid-template-rows: 4em 4em 4em 4em 4em;
+	}
 
-  .points-wrapper {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 4em 4em 4em 4em;
-  }
+	.points-wrapper {
+		display: grid;
+		justify-content: center;
+		grid-template-columns: 4em 4em 4em 4em;
+	}
 
-  .input-wrapper {
-    $tipSize: 0.5em;
-    $color: #ecf0f1;
+	.input-wrapper {
+		$tipSize: 0.5em;
+		$color: #ecf0f1;
 
-    .arrows-wrapper {
-      $margin: 0;
-      position: absolute;
-      z-index: 0;
-      left: $margin;
-      right: $margin;
-      top: $margin;
-      bottom: $margin;
+		.arrows-wrapper {
+			$margin: 0;
+			position: absolute;
+			z-index: 0;
+			left: $margin;
+			right: $margin;
+			top: $margin;
+			bottom: $margin;
 
-      &.direction-x {
-        left: 2em;
+			&.direction-x {
+				left: 2em;
 
-        .arrow {
-          left: 0;
-          right: 0;
-          height: 0.1em;
-          transform: translateY(-50%);
+				.arrow {
+					left: 0;
+					right: 0;
+					height: 0.1em;
+					transform: translateY(-50%);
 
-          &:after {
-            display: table;
-            content: "";
-            border: $tipSize solid transparent;
-            border-right: 0;
-            border-left-color: $color;
-            position: absolute;
-            top: 0.05em;
-            right: -$tipSize;
-            transform: translateY(-50%);
-          }
+					&:after {
+						display: table;
+						content: '';
+						border: $tipSize solid transparent;
+						border-right: 0;
+						border-left-color: $color;
+						position: absolute;
+						top: 0.05em;
+						right: -$tipSize;
+						transform: translateY(-50%);
+					}
 
-          &:first-child {
-            top: 11%;
-          }
+					&:first-child {
+						top: 11%;
+					}
 
-          &:nth-child(2) {
-            top: 11% + 25%;
-          }
+					&:nth-child(2) {
+						top: 11% + 25%;
+					}
 
-          &:nth-child(3) {
-            top: 11% + 50%;
-          }
+					&:nth-child(3) {
+						top: 11% + 50%;
+					}
 
-          &:last-child {
-            top: 100% - 14%;
-          }
-        }
-      }
+					&:last-child {
+						top: 100% - 14%;
+					}
+				}
+			}
 
-      &.direction-y {
-        top: 2em;
+			&.direction-y {
+				top: 2em;
 
-        .arrow {
-          top: 0;
-          bottom: 0;
-          width: 0.1em;
+				.arrow {
+					top: 0;
+					bottom: 0;
+					width: 0.1em;
 
-          &:after {
-            display: table;
-            content: "";
-            border: $tipSize solid transparent;
-            border-bottom: 0;
-            border-top-color: $color;
-            position: absolute;
-            left: 0.05em;
-            bottom: -$tipSize;
-            transform: translateX(-50%);
-          }
+					&:after {
+						display: table;
+						content: '';
+						border: $tipSize solid transparent;
+						border-bottom: 0;
+						border-top-color: $color;
+						position: absolute;
+						left: 0.05em;
+						bottom: -$tipSize;
+						transform: translateX(-50%);
+					}
 
-          &:first-child {
-            left: 11%;
-          }
+					&:first-child {
+						left: 11%;
+					}
 
-          &:nth-child(2) {
-            left: 11% + 25%;
-          }
+					&:nth-child(2) {
+						left: 11% + 25%;
+					}
 
-          &:nth-child(3) {
-            left: 11% + 50%;
-          }
+					&:nth-child(3) {
+						left: 11% + 50%;
+					}
 
-          &:last-child {
-            left: 100% - 14%;
-          }
-        }
-      }
+					&:last-child {
+						left: 100% - 14%;
+					}
+				}
+			}
 
-      &.direction-z {
-        left: 2em;
-        top: 2em;
-        background: linear-gradient(
-          to top right,
-          transparent calc(50% - 0.05em),
-          $color calc(50% - 0.05em),
-          $color calc(50% + 0.05em),
-          transparent calc(50% + 0.05em)
-        );
+			&.direction-z {
+				left: 2em;
+				top: 2em;
+				background: linear-gradient(
+					to top right,
+					transparent calc(50% - 0.05em),
+					$color calc(50% - 0.05em),
+					$color calc(50% + 0.05em),
+					transparent calc(50% + 0.05em)
+				);
 
-        .arrow {
-          bottom: 0;
-          right: 0;
-          transform: rotate(45deg);
+				.arrow {
+					bottom: 0;
+					right: 0;
+					transform: rotate(45deg);
 
-          &:after {
-            display: table;
-            content: "";
-            border: $tipSize solid transparent;
-            border-right: 0;
-            border-left-color: $color;
-            position: absolute;
-            right: -$tipSize;
-            transform: translateY(-50%);
-          }
-        }
-      }
-    }
+					&:after {
+						display: table;
+						content: '';
+						border: $tipSize solid transparent;
+						border-right: 0;
+						border-left-color: $color;
+						position: absolute;
+						right: -$tipSize;
+						transform: translateY(-50%);
+					}
+				}
+			}
+		}
 
-    .arrow {
-      position: absolute;
-      background-color: $color;
-    }
-  }
-  .points {
-    align-self: center;
-    justify-self: center;
-    p {
-      background-color: #fbc02d;
-    }
-  }
-  .input {
-    &[disabled] {
-      color: #2c3e50;
-      background: #7f8c8d;
-    }
-  }
-  .selected {
-    color: #fbc02d;
-    background-color: #2c3e50;
-  }
+		.arrow {
+			position: absolute;
+			background-color: $color;
+		}
+	}
+	.points {
+		align-self: center;
+		justify-self: center;
+		p {
+			background-color: #fbc02d;
+		}
+	}
+	.selected {
+		color: #fbc02d;
+		background-color: #2c3e50;
+	}
 }

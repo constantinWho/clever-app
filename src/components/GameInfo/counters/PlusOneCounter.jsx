@@ -1,6 +1,8 @@
 import InputWrapper from '../../Wrappers/InputWrapper/InputWrapper'
+import BonusWrapper from '../../Wrappers/BonusWrapper/BonusWrapper'
 
-const PlusOneCounter = () => {
+const PlusOneCounter = ({ plusOnes }) => {
+	const bonus = [{ styleSheet: '+1', value: '+1' }]
 	const input = [
 		{ value: '' },
 		{ value: '' },
@@ -13,8 +15,12 @@ const PlusOneCounter = () => {
 
 	return (
 		<div className='plus-one'>
-			<p className='bonus'>+1</p>
-			<InputWrapper className='input' input={input} />
+			<BonusWrapper className='bonus' bonus={bonus} />
+			<InputWrapper
+				activeInputs={plusOnes}
+				className='input'
+				input={input}
+			/>
 		</div>
 	)
 }

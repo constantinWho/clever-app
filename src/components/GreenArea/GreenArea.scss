@@ -1,82 +1,82 @@
-.green-area {
-  grid-area: green-area;
-  background-color: #27ae60;
-  display: grid;
-  justify-items: center;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: 3.3em 36.3em;
-  grid-template-rows: 2em 3.3em 2em;
-  grid-template-areas:
-    "arrow-img points"
-    "arrow-img input"
-    "arrow-img bonus";
+.greenA {
+	grid-area: green-area;
+	background-color: #27ae60;
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: 3.3em 36.3em;
+	grid-template-rows: 2em 3.3em 2em;
+	grid-template-areas:
+		'arrow-img points'
+		'arrow-img input'
+		'arrow-img bonus';
 
-  .arrow-img {
-    place-self: center;
-    padding: 0.5em;
-    width: 2em;
-    height: 2em;
-    grid-area: arrow-img;
-    grid-template-columns: 3.3em;
-    grid-template-rows: 3.3em;
-    background-color: #2ecc71;
-    border: #2c3e50 0.1px solid;
-    border-radius: 5px;
-  }
-  .input-wrapper {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-area: input;
-    grid-template-columns: 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em;
-    grid-template-rows: 3.3em;
-  }
+	.arrow-img {
+		place-self: center;
+		padding: 0.5em;
+		width: 2em;
+		height: 2em;
+		grid-area: arrow-img;
+		grid-template-columns: 3.3em;
+		grid-template-rows: 3.3em;
+		background-color: #2ecc71;
+		border: #2c3e50 0.1px solid;
+		border-radius: 5px;
+	}
+	.input-wrapper {
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		grid-area: input;
+		grid-template-columns: 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em;
+		grid-template-rows: 3.3em;
+	}
 
-  .bonus-wrapper-col {
-    grid-area: bonus;
-    z-index: 5;
-    grid-template-columns: 9.9em 6.6em 3.3em 6.6em 3.3em 3.3em;
-    grid-template-rows: 2em;
+	.bonus-wrapper-col {
+		grid-area: bonus;
+		z-index: 5;
+		grid-template-columns: 9.9em 6.6em 3.3em 6.6em 3.3em 3.3em;
+		grid-template-rows: 2em;
 
-    .icon:nth-of-type(1) {
-      margin-left: 9.9em;
-      margin-bottom: 0.5em;
-    }
-    .icon:nth-of-type(2) {
-      margin-left: 6.6em;
-      margin-bottom: 0.5em;
-    }
-    .icon:nth-of-type(3) {
-      margin-left: 3.3em;
-      margin-bottom: 0.5em;
-    }
-    .icon:nth-of-type(4) {
-      margin-left: 6.7em;
-      margin-bottom: 0.5em;
-    }
-    .icon:nth-of-type(5) {
-      margin-left: 3.4em;
-      margin-bottom: 0.5em;
-    }
-  }
-  .points-wrapper {
-    margin-top: 0.1em;
-    display: grid;
-    grid-area: points;
-    grid-template-columns: 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em;
-    grid-template-rows: 2em;
+		.icon:nth-of-type(1) {
+			margin-left: 9.9em;
+			margin-bottom: 0.5em;
+		}
+		.icon:nth-of-type(2) {
+			margin-left: 6.6em;
+			margin-bottom: 0.5em;
+		}
+		.icon:nth-of-type(3) {
+			margin-left: 3.3em;
+			margin-bottom: 0.5em;
+		}
+		.icon:nth-of-type(4) {
+			margin-left: 6.7em;
+			margin-bottom: 0.5em;
+		}
+		.icon:nth-of-type(5) {
+			margin-left: 3.4em;
+			margin-bottom: 0.5em;
+		}
+	}
+	.points-wrapper {
+		margin-top: 0.1em;
+		display: grid;
+		grid-area: points;
+		grid-template-columns: 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em 3.3em;
+		grid-template-rows: 2em;
 
-    .points {
-      justify-self: center;
-      align-self: center;
-      p {
-        background-color: #4caf50;
-      }
-    }
-  }
-  .selected {
-    color: #4caf50;
-    background-color: #2c3e50;
-  }
+		.points {
+			justify-self: center;
+			align-self: center;
+			p {
+				background-color: #4caf50;
+			}
+		}
+	}
+	.selected {
+		color: #4caf50;
+		background-color: #2c3e50;
+	}
 }
