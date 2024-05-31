@@ -1,3 +1,4 @@
+import React from 'react'
 import RoundCounter from './counters/RoundCounter'
 import RedoCounter from './counters/RedoCounter'
 import PlusOneCounter from './counters/PlusOneCounter'

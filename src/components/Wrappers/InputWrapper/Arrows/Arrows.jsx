@@ -1,3 +1,5 @@
+import React from 'react'
+
 // Arrows from the background
 const Arrows = (props) => {
   if (props[`arrows${props.direction}`]) {

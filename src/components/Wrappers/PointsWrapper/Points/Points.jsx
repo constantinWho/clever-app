@@ -1,3 +1,4 @@
+import React from 'react'
 import './Points.css'
 
 const Points = ({ value }) => {

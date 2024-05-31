@@ -1,3 +1,4 @@
+import React from 'react'
 import InputWrapper from '../Wrappers/InputWrapper/InputWrapper'
 import BonusWrapper from '../Wrappers/BonusWrapper/BonusWrapper'
 import PointsWrapper from '../Wrappers/PointsWrapper/PointsWrapper'

@@ -1,4 +1,5 @@
 import './BonusWrapper.css'
+import React from 'react'
 import shortid from 'shortid'
 import Bonus from './Bonus/Bonus'
 
